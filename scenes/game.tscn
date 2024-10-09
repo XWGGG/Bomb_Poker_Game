@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq056puibqum0"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_tqq8r"]
+[ext_resource type="Script" path="res://scripts/deck.gd" id="2_4gstu"]
+[ext_resource type="PackedScene" uid="uid://c5hb0rt084ds0" path="res://scenes/card.tscn" id="2_ft4km"]
+[ext_resource type="PackedScene" uid="uid://dpbhq761ijsrv" path="res://scenes/player.tscn" id="3_0p6hp"]
+[ext_resource type="PackedScene" uid="uid://dlkxu6hyixysp" path="res://hud.tscn" id="4_2p8yf"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_tqq8r")
+
+[node name="Deck" type="Node" parent="."]
+script = ExtResource("2_4gstu")
+
+[node name="Card" parent="Deck" instance=ExtResource("2_ft4km")]
+
+[node name="Player1" parent="." instance=ExtResource("3_0p6hp")]
+
+[node name="Player2" parent="." instance=ExtResource("3_0p6hp")]
+
+[node name="hud" parent="." instance=ExtResource("4_2p8yf")]
